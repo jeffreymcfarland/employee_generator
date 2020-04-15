@@ -13,7 +13,11 @@ const render = require("./lib/htmlRenderer");
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
-inquirer.prompt([
+const teamArray = [
+
+]
+
+const baseQuestions = [
     {
         type: "input",
         name: "name",
@@ -35,13 +39,16 @@ inquirer.prompt([
         message: "What is the role of this employee?",
         choices: ["Manager", "Engineer", "Intern"]
     }
-]).then(answers => {
+];
+
+basePrompt = () => {
+inquirer.prompt(baseQuestions).then(answers => {
 
     const name = answers.name;
     const id = answers.id;
     const email = answers.email;
+    const role = answers.role;
     let roleInfo = "";
-    console.log(answers.role)
 
         if (answers.role === "Manager") {
             inquirer.prompt([
@@ -49,12 +56,33 @@ inquirer.prompt([
                     type: "input",
                     name: "phone",
                     message: "What is their office phone number?"
+                },
+                {
+                    type: "confirm",
+                    name: "confirm",
+                    message: "Do you need to add another employee's information?"
                 }
             ]).then(answers => {
 
                 roleInfo = answers.phone;
 
-                console.log(`${name}, ${id}, ${email}, ${roleInfo}`);
+                // console.log(`${name}, ${id}, ${email}, ${role}, ${roleInfo}`);
+
+                const newEmpl = {
+                    name: name,
+                    role: role,
+                    id: id,
+                    email: email,
+                    roleInfo: roleInfo
+                };
+
+                teamArray.push(newEmpl);
+
+                if (answers.confirm === true) {
+                    basePrompt();
+                } else {
+                    console.log(teamArray);
+                };
 
             }).catch(error => {
                 if(error.isTtyError) {
@@ -67,12 +95,33 @@ inquirer.prompt([
                     type: "input",
                     name: "github",
                     message: "What is their github username?"
+                },
+                {
+                    type: "confirm",
+                    name: "confirm",
+                    message: "Do you need to add another employee's information?"
                 }
             ]).then(answers => {
 
                 roleInfo = answers.github;
 
-                console.log(`${name}, ${id}, ${email}, ${roleInfo}`);
+                // console.log(`${name}, ${id}, ${email}, ${role}, ${roleInfo}`);
+
+                const newEmpl = {
+                    name: name,
+                    role: role,
+                    id: id,
+                    email: email,
+                    roleInfo: roleInfo
+                };
+
+                teamArray.push(newEmpl);
+
+                if (answers.confirm === true) {
+                    basePrompt();
+                } else {
+                    console.log(teamArray);
+                };
 
             }).catch(error => {
                 if(error.isTtyError) {
@@ -85,12 +134,33 @@ inquirer.prompt([
                     type: "input",
                     name: "school",
                     message: "What school do they attend?"
+                },
+                {
+                    type: "confirm",
+                    name: "confirm",
+                    message: "Do you need to add another employee's information?"
                 }
             ]).then(answers => {
 
                 roleInfo = answers.school;
 
-                console.log(`${name}, ${id}, ${email}, ${roleInfo}`);
+                // console.log(`${name}, ${id}, ${email}, ${role}, ${roleInfo}`);
+
+                const newEmpl = {
+                    name: name,
+                    role: role,
+                    id: id,
+                    email: email,
+                    roleInfo: roleInfo
+                };
+
+                teamArray.push(newEmpl);
+
+                if (answers.confirm === true) {
+                    basePrompt();
+                } else {
+                    console.log(teamArray);
+                };
 
             }).catch(error => {
                 if(error.isTtyError) {
@@ -106,6 +176,10 @@ inquirer.prompt([
       console.log("error")
     };
   });
+
+};
+
+basePrompt();
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
