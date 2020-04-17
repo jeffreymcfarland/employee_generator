@@ -6,6 +6,12 @@
 This node.js application uses inquirer to build employee cards for your work team! Simply answer the questions in your command line and continue to add as many employees as you would like. After you define the role of your employee, another set of questions will be asked more specific to their role. After each question is answered, new employee cards will be dynamically written to the designated html file.
 
 ***
+## Preview
+![gif](assets/employee.gif)
+
+![employee generator screenshot](assets/employee.png)
+
+***
 ## Table of Contents
 1. [Install](#install)
 2. [Usage](#usage)
@@ -58,5 +64,5 @@ jeffreymcfarland
 
 * [jlmcfarlandj@gmail.com](mailto:jlmcfarlandj@gmail.com)
 
-* [linkedin.com/in/jeffrey-mcfarland](www.linkedin.com/in/jeffrey-mcfarland-2659b116a/)
+* [linkedin.com/in/jeffrey-mcfarland](https://www.linkedin.com/in/jeffrey-mcfarland-2659b116a/)
 
