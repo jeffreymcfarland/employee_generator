@@ -7,8 +7,7 @@ This node.js application uses inquirer to build employee cards for your work tea
 
 ***
 ## Preview
-
-<img align="center" src="assets/employee.gif" alt="command line gif">
+![gif](assets/employee.gif)
 
 ![employee generator screenshot](assets/employee.png)
 
