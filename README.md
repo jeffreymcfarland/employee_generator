@@ -55,7 +55,8 @@ jeffreymcfarland
 ## Contact Me    
 
 <kbd><img src="https://avatars1.githubusercontent.com/u/59814218?v=4" /></kbd> 
-* <jlmcfarlandj@gmail.com>
+
+* [jlmcfarlandj@gmail.com](mailto:jlmcfarlandj@gmail.com)
 
 * [linkedin.com/in/jeffrey-mcfarland](www.linkedin.com/in/jeffrey-mcfarland-2659b116a/)
 
